@@ -3,16 +3,15 @@
     class Program
     {
 
-        public static async Task Main()
+        public static void Main(string[] args)
         {
             Counter counter = new Counter();
-            Task inputTask = Counter.Interaction();
 
             ICalculator Calculator = new Calculator();
 
-            Calculator.Face();
+            Calculator.Menu();
 
-            await inputTask;
+
         }
     }
 }

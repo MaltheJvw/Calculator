@@ -18,22 +18,7 @@ namespace Advanced_Calculator
             Count = 0;
         }
 
-        public static async Task Interaction()
-        {
-            
-            while (true)
-            {
-                // Asynchronously wait for a key press without blocking the program
-                var keyInfo = await Task.Run(() => Console.ReadKey(true));
-
-                if (Count > 0 && keyInfo.Key == ConsoleKey.C)
-                {
-
-                    Reset();
-                    await Program.Main();
-                }
-            }
-        }
+        
         public static int GetCount()
         {
             return Count;

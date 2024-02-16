@@ -8,57 +8,48 @@ namespace Advanced_Calculator
 {
     public interface ICalculator
     {
-        void Face();
-        void Face2(double Solved);
 
-        void Face3();
+        void Menu();
+        void basic();
+        void complex();
+
+
     }
 
     public class Calculator : ICalculator
     {
-        public void Face()
+        public void Menu()
         {
+            Console.WriteLine("Calculator");
+            Console.WriteLine("1 basic");
+            Console.WriteLine("2 complex");
+            Console.WriteLine("3 intense");
+            ConsoleKeyInfo keyInfo = Console.ReadKey();
 
-            if(Counter.GetCount() == 0)
+            switch (keyInfo.Key)
             {
-                Console.Clear();
-                Console.WriteLine("CALCULATOR");
-                Console.WriteLine("Turns: " + Counter.GetCount());
-                Console.Write(": ");
+                case ConsoleKey.D1:
+                    basic();
+                    break;
 
-                string Problem = Console.ReadLine();
-                double Solved = Logic.Operator(Problem);
-
-                Face2(Solved);
+                case ConsoleKey.D2:
+                    complex();
+                    break;
             }
-            else
-            {
-                Face3();
-            }
-
-            
-
-            
-            
-            
         }
 
-        public void Face2(double Solved)
+        
+
+        public void basic()
         {
-            Console.Clear();
-            Counter.Increment();
-            
-            Console.WriteLine("CALCULATOR");
-            Console.WriteLine("Turns: " + Counter.GetCount());
-            Console.WriteLine(": " + Solved);
-
-            Face();
+            Basic.Input();
             
         }
 
-        public void Face3()
+        public void complex()
         {
-            
+
         }
+
     }
 }
